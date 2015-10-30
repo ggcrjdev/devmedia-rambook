@@ -1,24 +1,14 @@
-process.title = 'TTT Server';
+process.title = 'App Server RAMBook';
+var express = require('express');
+var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+io.set('origins', 'http://localhost:3000');
+
+// Diz ao Express que o diretório web contém conteúdos estáticos
+app.use(express.static(__dirname + '/web'));
    
-  //Importando ExpressJS
-  var express = require('express'),
-      
-      //Importando Socket.IO
-      socketio = require('socket.io'),
-   
-      //Criando uma instancia do ExpressJS
-      app = express(),
-   
-      //Criando um HTTP Server a partir do ExpressJS
-      httpServer = require('http').createServer(app),
-   
-      //Utilizando a mesma porta do HTTP Server para o Socket.IO
-      io = socketio.listen(httpServer)
-  ;
-   
-  //Diz ao Express que o diretório web contém conteúdos estáticos
-  app.use(express.static(__dirname + '/web'));
-   
-  //Exporta os módulos
-  module.exports.socketServer = io;
-  module.exports.webServer = httpServer;
+// Exporta os módulos
+module.exports.socketIOServer = io;
+module.exports.httpServer = http;
+ 
