@@ -6,4 +6,3 @@ var userHandling = new UserHandling(serverModule.socketIOServer);
 serverModule.httpServer.listen(serverPort, function() {
   console.log('HTTP Server listening on *:' + serverPort);
 });
-  

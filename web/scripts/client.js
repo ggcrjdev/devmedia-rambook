@@ -1,8 +1,10 @@
 define(['socketio'], function(io) {
-   
-      var socket = io.connect('/'),
-          events = {};
-   
+      var ioTransports = ['websocket', 'flashsocket', 'htmlfile', 'xhr-polling', 'jsonp-polling', 'polling'];
+      io.set("origins", "*");
+      io.set("transports", ioTransports);
+
+      var events = {};
+      var socket = io.connect();
       socket.emit('likecomment', {});
       socket.emit('unlikecomment', {});
    
