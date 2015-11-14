@@ -6,8 +6,11 @@ requirejs.config({
     'mustache': '../bower_components/mustache.js/mustache.min'
   },
   shim: {
-    mustache: {
+    'mustache': {
       exports: 'Mustache'
+    },
+    'socketio': {
+      exports: 'io'
     }
   }
 });

@@ -1,10 +1,10 @@
 define(['socketio'], function(io) {
-      var ioTransports = ['websocket', 'flashsocket', 'htmlfile', 'xhr-polling', 'jsonp-polling', 'polling'];
-      io.set("origins", "*");
-      io.set("transports", ioTransports);
-
       var events = {};
-      var socket = io.connect();
+
+      console.log("socket-io-client: Connectiong to server...");
+      var socket = io.connect("http://localhost:3000");
+      console.log("socket-io-client: Connected to server.");
+
       socket.emit('likecomment', {});
       socket.emit('unlikecomment', {});
    
