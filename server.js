@@ -4,12 +4,8 @@ var config = require('./config');
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
 var app = express();
 var http = require('http').Server(app);
-
-// Configuração do Mongoose - driver do MongoDB.
-// TODO: Criar.
 
 // Configuração do socket.io
 var io = require('socket.io')(http, {
