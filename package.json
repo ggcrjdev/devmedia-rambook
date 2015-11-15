@@ -4,7 +4,10 @@
   "description": "RAMBook Rede Social Minima",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
     "express": "^4.13.3",
+    "mongoose": "^4.2.5",
     "socket.io": "^1.3.7"
   },
   "devDependencies": {},
@@ -12,5 +15,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Gustavo Gomes",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ggcrjdev/devmedia-rambook"
+  }
 }
